@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 export default function BackgroundParticles() {
   const canvasRef = useRef(null);
@@ -7,7 +7,7 @@ export default function BackgroundParticles() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let animationFrameId;
 
     const handleResize = () => {
@@ -16,9 +16,8 @@ export default function BackgroundParticles() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    // Create subtle star particles
     const particleCount = Math.min(Math.floor(window.innerWidth / 15), 100);
     const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
@@ -37,13 +36,11 @@ export default function BackgroundParticles() {
         p.x += p.speedX;
         p.y += p.speedY;
 
-        // Wrap edges
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        // Subtle alpha pulsing
         p.alpha += Math.sin(Date.now() * p.pulse) * 0.005;
         const currentAlpha = Math.max(0.1, Math.min(0.8, p.alpha));
 
@@ -51,7 +48,7 @@ export default function BackgroundParticles() {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(34, 211, 238, ${currentAlpha})`;
         ctx.shadowBlur = p.radius * 4;
-        ctx.shadowColor = 'rgba(6, 182, 212, 0.6)';
+        ctx.shadowColor = "rgba(6, 182, 212, 0.6)";
         ctx.fill();
         ctx.shadowBlur = 0;
       });
@@ -62,7 +59,7 @@ export default function BackgroundParticles() {
     render();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);

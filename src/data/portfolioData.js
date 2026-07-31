@@ -6,12 +6,12 @@ export const personalInfo = {
   institution: "Universitas Brawijaya",
   bio: "Mahasiswa Pendidikan Teknologi Informasi (PTI) di Universitas Brawijaya yang berfokus pada pengembangan aplikasi web modern, arsitektur perangkat lunak yang bersih, dan antarmuka pengguna yang responsif. Suka memecahkan masalah kompleks melalui kode yang terstruktur.",
   location: "Malang, Indonesia",
-  email: "gilang.dev@example.com",
+  email: "[EMAIL_ADDRESS]",
   socials: {
-    instagram: "https://instagram.com/gln.hooks",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    whatsapp: "https://wa.me/6281234567890"
+    instagram: "https://www.instagram.com/gln.hooks/",
+    github: "https://github.com/gilangrdhi",
+    linkedin: "https://www.linkedin.com/in/gilang-ardhi-maulana-2b883b333/",
+    whatsapp: "https://wa.me/6285895728196"
   }
 };
 

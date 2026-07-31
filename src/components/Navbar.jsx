@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { InstagramIcon } from './Icons';
-import { personalInfo } from '../data/portfolioData';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { InstagramIcon } from "./Icons";
+import { personalInfo } from "../data/portfolioData";
 
 export default function Navbar({ activeSection, setActiveSection }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'portofolio', label: 'Portofolio' },
-    { id: 'tentang', label: 'Tentang' },
-    { id: 'kontak', label: 'Kontak' },
+    { id: "home", label: "Home" },
+    { id: "portofolio", label: "Portofolio" },
+    { id: "tentang", label: "Tentang" },
+    { id: "kontak", label: "Kontak" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollTo = (id) => {
@@ -28,7 +28,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
     setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -39,17 +39,21 @@ export default function Navbar({ activeSection, setActiveSection }) {
       transition={{ duration: 0.5, delay: 0.2 }}
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'py-3 bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/80 shadow-md'
-          : 'py-5 bg-transparent'
+          ? "py-3 bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/80 shadow-md"
+          : "py-5 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
-        {/* LOGO */}
-        <a href="#home" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo("home");
+          }}
+        >
           <motion.div
             layoutId="navbar-logo"
-            transition={{ duration: 0.7, type: 'spring', bounce: 0.15 }}
+            transition={{ duration: 0.7, type: "spring", bounce: 0.15 }}
             className="flex items-center gap-2 cursor-pointer group"
           >
             <div className="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center font-bold text-lg text-zinc-950 shadow-sm group-hover:bg-cyan-400 transition-colors">
@@ -61,7 +65,6 @@ export default function Navbar({ activeSection, setActiveSection }) {
           </motion.div>
         </a>
 
-        {/* DESKTOP MENU LINKS */}
         <nav className="hidden md:flex items-center gap-1 px-3 py-1 rounded-full bg-zinc-900/80 border border-zinc-800 backdrop-blur-md">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
@@ -70,7 +73,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
                 className={`relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full ${
-                  isActive ? 'text-white' : 'text-zinc-400 hover:text-zinc-200'
+                  isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
                 {link.label}
@@ -78,7 +81,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
                   <motion.div
                     layoutId="activeIndicator"
                     className="absolute inset-0 rounded-full bg-zinc-800 border border-zinc-700 -z-10"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
               </button>
@@ -86,7 +89,6 @@ export default function Navbar({ activeSection, setActiveSection }) {
           })}
         </nav>
 
-        {/* SOCIAL MEDIA HANDLE */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href={personalInfo.socials.instagram}
@@ -99,7 +101,6 @@ export default function Navbar({ activeSection, setActiveSection }) {
           </a>
         </div>
 
-        {/* MOBILE MENU TOGGLE */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white"
@@ -109,7 +110,6 @@ export default function Navbar({ activeSection, setActiveSection }) {
         </button>
       </div>
 
-      {/* MOBILE MENU DROPDOWN */}
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -124,8 +124,8 @@ export default function Navbar({ activeSection, setActiveSection }) {
                 onClick={() => scrollTo(link.id)}
                 className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   activeSection === link.id
-                    ? 'bg-zinc-900 text-white font-semibold border border-zinc-800'
-                    : 'text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200'
+                    ? "bg-zinc-900 text-white font-semibold border border-zinc-800"
+                    : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200"
                 }`}
               >
                 {link.label}

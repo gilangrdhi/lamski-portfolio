@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export function InstagramIcon({ size = 18, className = "" }) {
   return (
@@ -67,7 +67,6 @@ export function UBLogoIcon({ size = 18, className = "" }) {
       fill="currentColor"
       className={className}
     >
-      {/* Clean monochrome emblem representing Universitas Brawijaya crest */}
       <path d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4zm0 3.2l5 2.5v4.3c0 3.9-2.6 7.6-5 8.7-2.4-1.1-5-4.8-5-8.7V7.7l5-2.5zm-2 5.3v4h4v-4h-4z" />
     </svg>
   );
