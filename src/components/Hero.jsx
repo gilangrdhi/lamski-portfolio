@@ -130,15 +130,17 @@ export default function Hero() {
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-bold text-white font-mono">
-                  UB
+                  9+
                 </div>
-                <div className="text-xs text-zinc-400">Teknologi Informasi</div>
+                <div className="text-xs text-zinc-400">Tech Stack Dikuasai</div>
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-bold text-white font-mono">
                   100%
                 </div>
-                <div className="text-xs text-zinc-400">Clean Code Passion</div>
+                <div className="text-xs text-zinc-400">
+                  Semangat Belajar Hal Baru
+                </div>
               </div>
             </div>
           </motion.div>

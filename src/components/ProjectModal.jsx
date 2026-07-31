@@ -1,36 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, CheckCircle, Layers, Sparkles } from "lucide-react";
 import { GithubIcon } from "./Icons";
 
 export default function ProjectModal({ project, onClose }) {
+  useEffect(() => {
+    if (project) {
+      document.body.style.overflow = "hidden";
+    }
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [project, onClose]);
+
   if (!project) return null;
 
-  return (
+  return createPortal(
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-zinc-950/80 backdrop-blur-md -z-10"
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-0 pointer-events-auto"
         />
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-2xl bg-zinc-900 border border-zinc-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl overflow-hidden glow-cyan"
+          className="relative z-10 w-full max-w-2xl max-h-[90vh] my-auto bg-zinc-900 border border-zinc-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl overflow-y-auto glow-cyan"
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors z-20"
           >
             <X size={20} />
           </button>
 
-          <div className="relative w-full h-56 sm:h-64 rounded-xl overflow-hidden mb-6 border border-zinc-800">
+          <div className="relative w-full h-48 sm:h-60 rounded-xl overflow-hidden mb-6 border border-zinc-800 shrink-0">
             <img
               src={project.image}
               alt={project.title}
@@ -70,7 +86,7 @@ export default function ProjectModal({ project, onClose }) {
           )}
 
           <div className="mb-8">
-            <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+            <h4 className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
               <Layers size={14} />
               Tech Stack:
             </h4>
@@ -108,6 +124,7 @@ export default function ProjectModal({ project, onClose }) {
           </div>
         </motion.div>
       </div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

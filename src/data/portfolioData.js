@@ -144,15 +144,31 @@ export const testimonials = [
     name: "Dosen Pembimbing PTI",
     role: "Universitas Brawijaya",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
-    text: "Gilang memiliki logika pemrograman yang rapi dan konsisten. Hasil pengembangan aplikasi web selalu bersih secara struktur kode dan responsif.",
+    text: "Gilang memiliki logika pemrograman yang rapi dan terstruktur. Hasil pengembangan web selalu bersih secara kode dan sangat responsif.",
     rating: 5
   },
   {
     id: 2,
     name: "Rizky A.",
-    role: "Rekan Tim Project",
+    role: "Product Client",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
-    text: "Rekan kerja tim yang sangat solutif. Menguasai pembuatan UI interaktif dengan cepat serta komunikasi yang baik dalam proyek.",
+    text: "Sangat puas dengan hasilnya! Animasi smooth, desain modern, dan pengerjaan tepat waktu sesuai kesepakatan.",
+    rating: 5
+  },
+  {
+    id: 3,
+    name: "Sarah N.",
+    role: "UI/UX Designer",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+    text: "Hasil slicing dari Figma ke React.js presisi banget! Komunikasi juga sangat solutif sepanjang penggarapan project.",
+    rating: 5
+  },
+  {
+    id: 4,
+    name: "Budi S.",
+    role: "Tech Lead Partner",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    text: "Struktur kodenya clean, mudah dirawat, dan siap di-deploy secara handal tanpa kendala.",
     rating: 5
   }
 ];
