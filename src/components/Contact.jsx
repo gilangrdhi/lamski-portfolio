@@ -35,7 +35,7 @@ export default function Contact() {
   const contactOptions = [
     {
       name: "WhatsApp",
-      handle: "+62 812-3456-7890",
+      handle: "+62 858-9572-8196",
       icon: MessageSquare,
       url: personalInfo.socials.whatsapp,
     },
