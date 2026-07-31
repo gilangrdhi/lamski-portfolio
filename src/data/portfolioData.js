@@ -191,7 +191,7 @@ export const testimonials = [
     name: "Dosen Pembimbing PTI",
     role: "Universitas Brawijaya",
     avatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      "https://i.pinimg.com/736x/91/13/07/91130719acbc314dc50c4825e28a006b.jpg",
     text: "Gilang memiliki logika pemrograman yang rapi dan terstruktur. Hasil pengembangan web selalu bersih secara kode dan sangat responsif.",
     rating: 5,
   },
@@ -211,7 +211,7 @@ export const testimonials = [
     avatar:
       "https://i.pinimg.com/736x/14/29/7c/14297cca6f8de949703c2c45774c3b62.jpg",
     text: "Hasil slicing dari Figma ke React.js presisi banget! Komunikasi juga sangat solutif sepanjang penggarapan project.",
-    rating: 4,
+    rating: 5,
   },
   {
     id: 4,
