@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5 flex justify-center items-center order-2 lg:order-1"
+            className="lg:col-span-5 flex justify-center items-center lg:order-1"
           >
             <LanyardCard />
           </motion.div>
@@ -54,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="lg:col-span-7 flex flex-col justify-center text-left order-1 lg:order-2"
+            className="lg:col-span-7 flex flex-col justify-center text-left lg:order-2"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-300 w-fit mb-6">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
