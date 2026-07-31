@@ -1,6 +1,5 @@
 import React from "react";
-import { SiReact, SiTailwindcss } from "react-icons/si";
-import { VscCode } from "react-icons/vsc";
+import { Code2, Terminal, Layers } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
 export default function Footer() {
@@ -10,14 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-zinc-800/60">
           <div className="md:col-span-5 space-y-5">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400 shadow-md hover:scale-105 transition-transform">
-                <SiReact size={22} />
+              <div className="w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-cyan-400 shadow-md hover:scale-105 transition-transform" title="React.js">
+                <Code2 size={22} />
               </div>
-              <div className="w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-blue-400 shadow-md hover:scale-105 transition-transform">
-                <VscCode size={22} />
+              <div className="w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-blue-400 shadow-md hover:scale-105 transition-transform" title="VS Code">
+                <Terminal size={22} />
               </div>
-              <div className="w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-teal-400 shadow-md hover:scale-105 transition-transform">
-                <SiTailwindcss size={22} />
+              <div className="w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-teal-400 shadow-md hover:scale-105 transition-transform" title="Tailwind CSS">
+                <Layers size={22} />
               </div>
             </div>
 
