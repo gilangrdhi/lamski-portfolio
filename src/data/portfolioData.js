@@ -197,29 +197,29 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Rizky A.",
-    role: "Product Client",
+    name: "Cristiano Ronaldo",
+    role: "Goat of Football",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
-    text: "Sangat puas dengan hasilnya! Animasi smooth, desain modern, dan pengerjaan tepat waktu sesuai kesepakatan.",
+      "https://i.pinimg.com/736x/e4/cf/d3/e4cfd3aa51bca85a6d407bf8cf53a6c1.jpg",
+    text: "Sangat puas dengan hasilnya! Animasi smooth, desain modern, dan pengerjaan tepat waktu sesuai kesepakatan. SIUUUUU",
     rating: 5,
   },
   {
     id: 3,
-    name: "Sarah N.",
-    role: "UI/UX Designer",
+    name: "Lionel Messi",
+    role: "2nd GOAT of Football",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+      "https://i.pinimg.com/736x/14/29/7c/14297cca6f8de949703c2c45774c3b62.jpg",
     text: "Hasil slicing dari Figma ke React.js presisi banget! Komunikasi juga sangat solutif sepanjang penggarapan project.",
-    rating: 5,
+    rating: 4,
   },
   {
     id: 4,
-    name: "Budi S.",
-    role: "Tech Lead Partner",
+    name: "Bob",
+    role: "Minions",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
-    text: "Struktur kodenya clean, mudah dirawat, dan siap di-deploy secara handal tanpa kendala.",
+      "https://i.pinimg.com/736x/3c/44/71/3c447152fe0d057f11248a72c20a20b6.jpg",
+    text: "Tulaliloo ti amo, BANANAA!",
     rating: 5,
   },
 ];

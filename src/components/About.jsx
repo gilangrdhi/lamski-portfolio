@@ -25,7 +25,7 @@ export default function About() {
             Tentang Saya
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Mahasiswa Rekayasa Perangkat Lunak (RPL) dengan minat tinggi pada
+            Mahasiswa Pendidikan Teknologi Informasi (PTI) dengan minat tinggi pada
             arsitektur web modern, performa antarmuka, dan kualitas perangkat
             lunak.
           </p>
