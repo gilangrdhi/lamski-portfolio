@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, Star, Check, Sparkles } from "lucide-react";
 import { InstagramIcon, GithubIcon, LinkedinIcon } from "./Icons";
 import confetti from "canvas-confetti";
 import { personalInfo, testimonials } from "../data/portfolioData";
+
 
 export default function Contact() {
   const [formSent, setFormSent] = useState(false);
@@ -17,19 +19,36 @@ export default function Contact() {
     e.preventDefault();
     if (!formData.name || !formData.message) return;
 
-    setFormSent(true);
-
-    confetti({
-      particleCount: 70,
-      spread: 60,
-      origin: { y: 0.6 },
-      colors: ["#06b6d4", "#3b82f6", "#ffffff"],
-    });
-
-    setTimeout(() => {
-      setFormSent(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 4000);
+    emailjs
+      .send(
+        "service_jrbregq",
+        "template_smw64rk",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "Yk5WeS1XdRnpmMxrH"
+      )
+      .then(() => {
+        setFormSent(true);
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ["#06b6d4", "#3b82f6", "#ffffff"],
+        });
+        setTimeout(() => {
+          setFormSent(false);
+          setFormData({ name: "", email: "", message: "" });
+        }, 4000);
+      })
+      .catch((error) => {
+        console.error("Gagal mengirim email:", error);
+        alert(
+          "Maaf, pesan gagal terkirim. Silakan coba lagi atau hubungi lewat kontak lainnya."
+        );
+      });
   };
 
   const contactCards = [
@@ -165,6 +184,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         placeholder="Nama lengkap"
                         value={formData.name}
@@ -180,6 +200,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="email@example.com"
                         value={formData.email}
@@ -196,6 +217,7 @@ export default function Contact() {
                       Pesan
                     </label>
                     <textarea
+                      name="message"
                       rows={4}
                       required
                       placeholder="Tuliskan pesan atau kebutuhan project Anda..."
