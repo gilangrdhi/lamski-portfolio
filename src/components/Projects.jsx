@@ -98,7 +98,6 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        {/* Filter Categories */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}

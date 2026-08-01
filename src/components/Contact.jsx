@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { Mail, MessageSquare, Send, Star, Check, Sparkles } from "lucide-react";
+import { Mail, MessageSquare, Send, Star, Check, Sparkles, Copy } from "lucide-react";
 import { InstagramIcon, GithubIcon, LinkedinIcon } from "./Icons";
 import confetti from "canvas-confetti";
 import { personalInfo, testimonials } from "../data/portfolioData";
 
 
+
 export default function Contact() {
   const [formSent, setFormSent] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +64,7 @@ export default function Contact() {
       name: "Email",
       handle: personalInfo.email,
       icon: Mail,
-      url: `mailto:${personalInfo.email}`,
+      url: `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${encodeURIComponent("Halo dari Portfolio Website")}`,
       color: "from-blue-500/20 to-cyan-500/20",
     },
     {
@@ -95,7 +103,6 @@ export default function Contact() {
       className="py-24 relative z-10 bg-zinc-900/90 border-y border-zinc-800/80 shadow-inner"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* MULTI-LEVEL SECTION HEADER (Reference Image 2 style) */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +134,6 @@ export default function Contact() {
                       whileTap={{ scale: 0.95 }}
                       className="group relative p-5 rounded-2xl bg-zinc-800/70 border border-zinc-700/70 hover:border-cyan-400/60 flex flex-col items-center justify-center text-center transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-cyan-500/10 overflow-hidden"
                     >
-                      {/* Card background subtle gradient overlay on hover */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                       />
@@ -148,6 +154,30 @@ export default function Contact() {
               <p className="text-xs font-mono font-semibold tracking-widest text-zinc-400 uppercase text-center mt-5 bg-zinc-950/40 py-2.5 px-4 rounded-xl border border-zinc-800/60">
                 KLIK SALAH SATU IKON UNTUK MEMULAI PESANAN ATAU DISKUSI
               </p>
+
+              <div className="mt-3 p-3.5 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+                <div className="flex items-center gap-2.5 text-zinc-300 text-xs sm:text-sm">
+                  <Mail size={16} className="text-cyan-400 shrink-0" />
+                  <span className="font-mono font-medium">{personalInfo.email}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="px-3.5 py-1.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-white border border-zinc-700/80 text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-sm"
+                >
+                  {copiedEmail ? (
+                    <>
+                      <Check size={14} className="text-emerald-400" />
+                      <span className="text-emerald-400">Email Disalin!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={14} className="text-cyan-400" />
+                      <span>Salin Email</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
 
             <motion.div
