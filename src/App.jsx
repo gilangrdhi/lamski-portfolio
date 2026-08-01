@@ -41,23 +41,19 @@ export default function App() {
 
       <BackgroundParticles />
 
-      {!loading && (
-        <>
-          <Navbar
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-          />
+      <Navbar
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
 
-          <main>
-            <Hero />
-            <Projects />
-            <About />
-            <Contact />
-          </main>
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+        <Contact />
+      </main>
 
-          <Footer />
-        </>
-      )}
+      <Footer />
     </div>
   );
 }

@@ -301,6 +301,8 @@ export default function Contact() {
                         <img
                           src={item.avatar}
                           alt={item.name}
+                          loading="lazy"
+                          decoding="async"
                           className="w-8 h-8 rounded-full object-cover border border-zinc-600 shrink-0"
                         />
                         <div>

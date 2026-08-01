@@ -44,7 +44,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0 }}
             className="lg:col-span-5 flex justify-center items-center lg:order-1"
           >
             <LanyardCard />
@@ -53,7 +53,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0 }}
             className="lg:col-span-7 flex flex-col justify-center text-left lg:order-2"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-300 w-fit mb-6">

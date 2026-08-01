@@ -53,7 +53,7 @@ export default function Navbar({ activeSection, setActiveSection }) {
         >
           <motion.div
             layoutId="navbar-logo"
-            transition={{ duration: 0.7, type: "spring", bounce: 0.15 }}
+            transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.8 }}
             className="flex items-center gap-2 cursor-pointer group"
           >
             <div className="w-8 h-8 rounded-lg bg-cyan-500 flex items-center justify-center font-bold text-lg text-zinc-950 shadow-sm group-hover:bg-cyan-400 transition-colors">

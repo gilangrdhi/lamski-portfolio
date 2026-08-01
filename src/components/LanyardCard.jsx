@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
-import gilangPhoto from '../assets/gilang.jpg';
-import ubLogo from '../assets/logo-ub.png';
+import gilangPhoto from '../assets/gilang.webp';
+import ubLogo from '../assets/logo-ub.webp';
 
 export default function LanyardCard() {
   const containerRef = useRef(null);
@@ -98,6 +98,8 @@ export default function LanyardCard() {
             src={gilangPhoto}
             alt={personalInfo.name}
             draggable={false}
+            fetchpriority="high"
+            decoding="async"
             className="w-full h-full object-cover object-top transition-transform duration-300 pointer-events-none select-none"
           />
         </div>
